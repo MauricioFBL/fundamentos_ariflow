@@ -1,0 +1,18 @@
+[2023-06-13T00:04:30.940+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Orquestracion1.tarea3 scheduled__2023-06-12T00:00:00+00:00 [queued]>
+[2023-06-13T00:04:30.949+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Orquestracion1.tarea3 scheduled__2023-06-12T00:00:00+00:00 [queued]>
+[2023-06-13T00:04:30.949+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-13T00:04:30.960+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): tarea3> on 2023-06-12 00:00:00+00:00
+[2023-06-13T00:04:30.964+0000] {standard_task_runner.py:57} INFO - Started process 24948 to run task
+[2023-06-13T00:04:30.968+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'Orquestracion1', 'tarea3', 'scheduled__2023-06-12T00:00:00+00:00', '--job-id', '65', '--raw', '--subdir', 'DAGS_FOLDER/5.1_orquestracion.py', '--cfg-path', '/tmp/tmpqcwewe0s']
+[2023-06-13T00:04:30.969+0000] {standard_task_runner.py:85} INFO - Job 65: Subtask tarea3
+[2023-06-13T00:04:31.014+0000] {task_command.py:410} INFO - Running <TaskInstance: Orquestracion1.tarea3 scheduled__2023-06-12T00:00:00+00:00 [running]> on host 5fef267ae46d
+[2023-06-13T00:04:31.083+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Orquestracion1' AIRFLOW_CTX_TASK_ID='tarea3' AIRFLOW_CTX_EXECUTION_DATE='2023-06-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-06-12T00:00:00+00:00'
+[2023-06-13T00:04:31.084+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-13T00:04:31.086+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "sleep 2 && echo 'Tarea 3'"]
+[2023-06-13T00:04:31.097+0000] {subprocess.py:86} INFO - Output:
+[2023-06-13T00:04:33.101+0000] {subprocess.py:93} INFO - Tarea 3
+[2023-06-13T00:04:33.104+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-13T00:04:33.125+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=Orquestracion1, task_id=tarea3, execution_date=20230612T000000, start_date=20230613T000430, end_date=20230613T000433
+[2023-06-13T00:04:33.187+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-13T00:04:33.208+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

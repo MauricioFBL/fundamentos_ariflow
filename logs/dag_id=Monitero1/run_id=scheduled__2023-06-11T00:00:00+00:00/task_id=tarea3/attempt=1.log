@@ -1,0 +1,18 @@
+[2023-06-12T00:11:08.385+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Monitero1.tarea3 scheduled__2023-06-11T00:00:00+00:00 [queued]>
+[2023-06-12T00:11:08.405+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Monitero1.tarea3 scheduled__2023-06-11T00:00:00+00:00 [queued]>
+[2023-06-12T00:11:08.407+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-12T00:11:08.425+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): tarea3> on 2023-06-11 00:00:00+00:00
+[2023-06-12T00:11:08.432+0000] {standard_task_runner.py:57} INFO - Started process 18733 to run task
+[2023-06-12T00:11:08.439+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'Monitero1', 'tarea3', 'scheduled__2023-06-11T00:00:00+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/6.1_monitoreo.py', '--cfg-path', '/tmp/tmpq0x495tz']
+[2023-06-12T00:11:08.442+0000] {standard_task_runner.py:85} INFO - Job 59: Subtask tarea3
+[2023-06-12T00:11:08.557+0000] {task_command.py:410} INFO - Running <TaskInstance: Monitero1.tarea3 scheduled__2023-06-11T00:00:00+00:00 [running]> on host 5fef267ae46d
+[2023-06-12T00:11:08.679+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Monitero1' AIRFLOW_CTX_TASK_ID='tarea3' AIRFLOW_CTX_EXECUTION_DATE='2023-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-06-11T00:00:00+00:00'
+[2023-06-12T00:11:08.681+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-12T00:11:08.682+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "sleep 2 && echo 'Tarea 3'"]
+[2023-06-12T00:11:08.714+0000] {subprocess.py:86} INFO - Output:
+[2023-06-12T00:11:10.725+0000] {subprocess.py:93} INFO - Tarea 3
+[2023-06-12T00:11:10.749+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-12T00:11:10.810+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=Monitero1, task_id=tarea3, execution_date=20230611T000000, start_date=20230612T001108, end_date=20230612T001110
+[2023-06-12T00:11:10.878+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-12T00:11:10.967+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

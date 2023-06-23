@@ -1,0 +1,22 @@
+[2023-06-17T02:41:38.152+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 6.2-monitoring.tarea4 scheduled__2022-01-01T00:00:00+00:00 [queued]>
+[2023-06-17T02:41:38.163+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 6.2-monitoring.tarea4 scheduled__2022-01-01T00:00:00+00:00 [queued]>
+[2023-06-17T02:41:38.164+0000] {taskinstance.py:1308} INFO - Starting attempt 3 of 3
+[2023-06-17T02:41:38.176+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): tarea4> on 2022-01-01 00:00:00+00:00
+[2023-06-17T02:41:38.181+0000] {standard_task_runner.py:57} INFO - Started process 67159 to run task
+[2023-06-17T02:41:38.187+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', '6.2-monitoring', 'tarea4', 'scheduled__2022-01-01T00:00:00+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/6.2_monitoreo.py', '--cfg-path', '/tmp/tmpl5mfflbm']
+[2023-06-17T02:41:38.188+0000] {standard_task_runner.py:85} INFO - Job 87: Subtask tarea4
+[2023-06-17T02:41:38.266+0000] {task_command.py:410} INFO - Running <TaskInstance: 6.2-monitoring.tarea4 scheduled__2022-01-01T00:00:00+00:00 [running]> on host 5fef267ae46d
+[2023-06-17T02:41:38.341+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='6.2-monitoring' AIRFLOW_CTX_TASK_ID='tarea4' AIRFLOW_CTX_EXECUTION_DATE='2022-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-01-01T00:00:00+00:00'
+[2023-06-17T02:41:38.342+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/6.2_monitoreo.py", line 9, in myfunction
+    raise Exception
+Exception
+[2023-06-17T02:41:38.354+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=6.2-monitoring, task_id=tarea4, execution_date=20220101T000000, start_date=20230617T024138, end_date=20230617T024138
+[2023-06-17T02:41:38.377+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 87 for task tarea4 (; 67159)
+[2023-06-17T02:41:38.405+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-17T02:41:38.439+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,28 @@
+[2023-06-17T03:10:56.039+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 7.3-filesensor.waiting_file manual__2023-06-17T03:10:29.505675+00:00 [queued]>
+[2023-06-17T03:10:56.048+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 7.3-filesensor.waiting_file manual__2023-06-17T03:10:29.505675+00:00 [queued]>
+[2023-06-17T03:10:56.049+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-17T03:10:56.058+0000] {taskinstance.py:1327} INFO - Executing <Task(FileSensor): waiting_file> on 2023-06-17 03:10:29.505675+00:00
+[2023-06-17T03:10:56.065+0000] {standard_task_runner.py:57} INFO - Started process 67918 to run task
+[2023-06-17T03:10:56.069+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', '7.3-filesensor', 'waiting_file', 'manual__2023-06-17T03:10:29.505675+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/7.3_file_sensor.py', '--cfg-path', '/tmp/tmpma4kdeds']
+[2023-06-17T03:10:56.070+0000] {standard_task_runner.py:85} INFO - Job 159: Subtask waiting_file
+[2023-06-17T03:10:56.119+0000] {task_command.py:410} INFO - Running <TaskInstance: 7.3-filesensor.waiting_file manual__2023-06-17T03:10:29.505675+00:00 [running]> on host 5fef267ae46d
+[2023-06-17T03:10:56.180+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='7.3-filesensor' AIRFLOW_CTX_TASK_ID='waiting_file' AIRFLOW_CTX_EXECUTION_DATE='2023-06-17T03:10:29.505675+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-17T03:10:29.505675+00:00'
+[2023-06-17T03:10:56.197+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 225, in execute
+    raise e
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 212, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/filesystem.py", line 61, in poke
+    hook = FSHook(self.fs_conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/filesystem.py", line 38, in __init__
+    conn = self.get_connection(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 434, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `fs_default` isn't defined
+[2023-06-17T03:10:56.202+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=7.3-filesensor, task_id=waiting_file, execution_date=20230617T031029, start_date=20230617T031056, end_date=20230617T031056
+[2023-06-17T03:10:56.209+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 159 for task waiting_file (The conn_id `fs_default` isn't defined; 67918)
+[2023-06-17T03:10:56.243+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-17T03:10:56.268+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
